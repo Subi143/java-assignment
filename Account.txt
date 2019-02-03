@@ -1,0 +1,89 @@
+public class Account {
+	long accNum;
+	double balance;
+	Person person;
+	
+	public void deposite(double amount) {
+		person=new Person();
+		if(amount<1000) {
+			person.getName();
+			System.out.println("entered amount should be greater than 1000");
+		}else {
+		balance=balance+amount;
+		System.out.println("the balance of account number "+accNum+" is "+balance);
+		}
+	}
+	
+	public void withdraw(double amount) {
+		person=new Person();
+		if(amount>balance) {
+			System.out.println("cannot withdraw amount");
+		} else {
+			balance=balance-amount;
+		}
+		
+	}
+	
+	public double getBalance() {
+		
+		return balance;	
+	}
+
+}
+
+public class AccountDemo {
+
+	public static void main(String[] args) {
+		Person person=new Person();
+		Account account=new Account();
+		Scanner scan=new Scanner(System.in);
+		System.out.println("enter the account details");
+		System.out.println("enter name");
+		String name=scan.next();
+		person.setName(name);
+		System.out.println("enter the age of the person");
+		float age=scan.nextFloat();
+		person.setAge(age);
+		Random r=new Random();
+		long t=r.nextInt(1000000);
+		account.accNum=t;
+		System.out.println("enter the amount to be deposited");
+		double amount=scan.nextDouble();
+		account.deposite(amount);
+		
+		
+		
+		
+		
+
+	}
+
+}
+
+public class Person {
+	public Person() {
+		super();
+	}
+	String name;
+	float age;
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public float getAge() {
+		return age;
+	}
+	public void setAge(float age) {
+		this.age = age;
+	}
+	@Override
+	public String toString() {
+		return "Person [name=" + name + ", age=" + age + "]";
+	}
+	
+	
+	
+
+}
