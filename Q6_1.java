@@ -1,29 +1,39 @@
-package assignment;
+package com.assignment;
 
 import java.util.Scanner;
 public class Q6_1 {
 
 public static void main(String[] args) throws NameException {
 		Scanner scanner = new Scanner(System.in);
-		System.out.print("Enter First Name: ");
+		/*System.out.print("Enter First Name: ");
 		String fname = scanner.next();
 		System.out.println("\nEnter Last Name: ");
 		String lname = scanner.next();
 		System.out.println("\nEnter Gender(M/F): ");
 		char gender = scanner.next().charAt(0);
-		if(fname == null && lname == null)
-			throw new NameException();
-		Person person = new Person(fname, lname, gender);
+		if(fname.isEmpty() && lname.isEmpty())
+			throw new NameException("Name Field Should Not Be Blank");
+		Personn person = new Personn(fname, lname, gender);
+		System.out.println(person);*/
+		
+		
+		String fname = "";
+		String lname = "";
+		System.out.println("\nEnter Gender(M/F): ");
+		char gender = scanner.next().charAt(0);
+		if(fname.isEmpty() && lname.isEmpty())
+			throw new NameException("Name Field Should Not Be Blank");
+		Personn person = new Personn(fname, lname, gender);
 		System.out.println(person);
 	}
 }
 
-class Person {
+class Personn {
 	private String f_Name;
 	private String l_Name;
 	private char gender;
 	
-	public Person(String f_Name, String l_Name, char gender) {
+	public Personn(String f_Name, String l_Name, char gender) {
 		super();
 		this.f_Name = f_Name;
 		this.l_Name = l_Name;
@@ -64,7 +74,7 @@ class Person {
 
 class NameException extends Exception
 {
-    public NameException() {
+	public NameException() {
     }
     
     public NameException(final String message) {
